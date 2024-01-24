@@ -11,8 +11,8 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
--- 防止包裹
-opt.wrap = false
+-- 自动换行
+opt.wrap = true
 
 -- 光标行
 opt.cursorline = true
@@ -35,3 +35,9 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 vim.cmd[[colorscheme tokyonight-moon]]
+
+-- 中文编码
+-- opt.termencoding = "utf-8"
+-- opt.encoding = "utf8"
+-- opt.fileencodings = [utf8,ucs-bom,gbk,cp936,gb2312,gb18030]
+

@@ -30,13 +30,13 @@ keymap.set("n", "<leader>w", "<C-w>w") -- 循环移动
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- 切换buffer
-keymap.set("n", "<leader>H", ":bnext<CR>")
-keymap.set("n", "<leader>L", ":bprevious<CR>")
+keymap.set("n", "<leader>L", ":bnext<CR>")
+keymap.set("n", "<leader>H", ":bprevious<CR>")
 
 -- 一键编译运行
-keymap.set("n", "<F5>", ":!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out < %<.in<CR>")
-keymap.set("n", "<F6>", ":!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out<CR>")
-keymap.set("n", "<F7>", ":!gdb %<.out<CR>")
+keymap.set("n", "<F5>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out < %<.in<CR>")
+keymap.set("n", "<F6>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out<CR>")
+keymap.set("n", "<F7>", ":w<CR>:!gdb %<.out<CR>")
 
 -- ---------- 插件 ---------- ---
 -- nvim-tree
