@@ -1,3 +1,4 @@
+-- leader key
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
@@ -16,8 +17,8 @@ keymap.set("n", "<C-A>", "ggVGy") -- 复制
 keymap.set("n", "<C-X>", "ggVGc") -- 删除
 
 -- 窗口
-keymap.set("n", "<leader>sl", "<C-w>v") -- 水平新增窗口 
-keymap.set("n", "<leader>sj", "<C-w>s") -- 垂直新增窗口
+keymap.set("n", "<leader>sh", "<C-w>v") -- 水平新增窗口 
+keymap.set("n", "<leader>sv", "<C-w>s") -- 垂直新增窗口
 
 -- 光标移动
 keymap.set("n", "<leader>j", "<C-w>j") -- 向下移动 
@@ -34,9 +35,9 @@ keymap.set("n", "<leader>L", ":bnext<CR>")
 keymap.set("n", "<leader>H", ":bprevious<CR>")
 
 -- 一键编译运行
-keymap.set("n", "<F5>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out < %<.in<CR>")
-keymap.set("n", "<F6>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out<CR>")
-keymap.set("n", "<F7>", ":w<CR>:!gdb %<.out<CR>")
+-- keymap.set("n", "<F5>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out < %<.in<CR>")
+-- keymap.set("n", "<F6>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out<CR>")
+-- keymap.set("n", "<F7>", ":w<CR>:!gdb %<.out<CR>")
 
 -- ---------- 插件 ---------- ---
 -- nvim-tree
