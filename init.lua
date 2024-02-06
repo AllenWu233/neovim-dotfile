@@ -1,5 +1,4 @@
 -- 入口文件
-
 require("plugins.plugins-setup")
 
 require("core.options")

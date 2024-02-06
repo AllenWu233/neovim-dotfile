@@ -40,9 +40,10 @@ keymap.set("n", "<leader>w", "<C-w>w") -- 循环移动
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- 切换buffer
-keymap.set("n", "<leader>L", ":bnext<CR>")
-keymap.set("n", "<leader>H", ":bprevious<CR>")
+-- 切换buffer keymap.set("n", "K", ":bnext<CR>")
+keymap.set("n", "J", ":bprevious<CR>")
+keymap.set("n", "K", ":bnext<CR>")
+keymap.set("n", "<leader>x", ":bdelete!<CR>")
 
 -- 一键编译运行
 -- keymap.set("n", "<F5>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out < %<.in<CR>")
