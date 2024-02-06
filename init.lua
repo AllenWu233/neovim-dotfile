@@ -4,6 +4,7 @@ require("plugins.plugins-setup")
 
 require("core.options")
 require("core.keymaps")
+require("core.autorun")
 
 -- 插件
 require("plugins.lualine")
