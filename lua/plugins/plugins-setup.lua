@@ -43,8 +43,19 @@ local plugins = {
   "lewis6991/gitsigns.nvim", -- 左则git提示
 
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1', -- 文件检索
+    'nvim-telescope/telescope.nvim', tag = '0.1.5', -- 文件检索
     dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
+  },
+
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'vimenter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
   },
 
 }
