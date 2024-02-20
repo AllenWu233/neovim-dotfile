@@ -17,7 +17,6 @@ local plugins = {
   "nvim-lualine/lualine.nvim",  -- 状态栏
   "nvim-tree/nvim-tree.lua",  -- 文档树
   "nvim-tree/nvim-web-devicons", -- 文档树图标
-  "startup-nvim/startup.nvim", -- 开始页面
 
   "christoomey/vim-tmux-navigator", -- 用ctl-hjkl来定位窗口
   "nvim-treesitter/nvim-treesitter", -- 语法高亮
