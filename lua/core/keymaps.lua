@@ -22,7 +22,7 @@ keymap.set("v", "<", "<gv")
 -- ---------- 正常模式 ---------- ---
 -- 全选操作
 keymap.set("n", "<C-A>", "ggVGy") -- 复制
-keymap.set("n", "<C-X>", "ggVGc") -- 删除
+keymap.set("n", "<C-X>", "ggdG") -- 删除
 
 -- 窗口
 keymap.set("n", "<leader>sh", "<C-w>v") -- 水平新增窗口 

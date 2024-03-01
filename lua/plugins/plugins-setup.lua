@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -23,12 +23,12 @@ local plugins = {
     "p00f/nvim-ts-rainbow", -- 配合treesitter，不同括号颜色区分
 
     {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
-    "neovim/nvim-lspconfig"
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
+        "neovim/nvim-lspconfig"
     },
 
-      -- 自动补全
+    -- 自动补全
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "L3MON4D3/LuaSnip", -- snippets引擎，不装这个自动补全会出问题
@@ -43,22 +43,22 @@ local plugins = {
     "lewis6991/gitsigns.nvim", -- 左则git提示
 
     {
-    'nvim-telescope/telescope.nvim', tag = '0.1.5', -- 文件检索
-    dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
+        'nvim-telescope/telescope.nvim', tag = '0.1.5', -- 文件检索
+        dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
     },
 
     {
-    'nvimdev/dashboard-nvim',
-    event = 'vimenter',
-    config = function()
-      require('dashboard').setup {
-        -- config
-      }
-    end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+        'nvimdev/dashboard-nvim',
+        event = 'vimenter',
+        config = function()
+            require('dashboard').setup {
+                -- config
+            }
+        end,
+        dependencies = { {'nvim-tree/nvim-web-devicons'}}
     },
 
-    -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 }
 
 local opts = {} -- 注意要定义这个变量
