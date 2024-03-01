@@ -47,18 +47,15 @@ local plugins = {
         dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
     },
 
-    {
-        'nvimdev/dashboard-nvim',
-        event = 'vimenter',
-        config = function()
-            require('dashboard').setup {
-                -- config
-            }
-        end,
-        dependencies = { {'nvim-tree/nvim-web-devicons'}}
-    },
-
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+    {
+        'goolord/alpha-nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
+        end
+    },
 }
 
 local opts = {} -- 注意要定义这个变量

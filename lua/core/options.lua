@@ -59,8 +59,8 @@ opt.signcolumn = "yes"
 opt.showmode = false
 
 -- 不可见字符显示
-opt.list = true
-opt.listchars = "space:·"
+-- opt.list = true
+-- opt.listchars = "space:·"
 
 -- 永远显示 tabline
 opt.showtabline = 2
