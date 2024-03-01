@@ -1,41 +1,52 @@
-require("mason").setup({
-  ui = {
-      icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗"
-      }
-  }
-})
-
-require("mason-lspconfig").setup({
-  -- 确保安装，根据需要填写
-  ensure_installed = {
+local servers = {
     "lua_ls",
     "pyright",
     "clangd",
-  },
+    "bashls",
+    "rust_analyzer",
+    "jdtls",
+}
+
+local settings = {
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+}
+
+local handlers = {
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    function (server_name) -- default handler (optional)
+       require("lspconfig")[server_name].setup {}
+    end,
+    -- Next, you can provide targeted overrides for specific servers.
+    -- ["rust_analyzer"] = function ()
+    --    -- require("rust-tools").setup {}
+    -- end,
+    ["lua_ls"] = function ()
+       local lspconfig = require("lspconfig")
+       lspconfig.lua_ls.setup {
+           settings = {
+               Lua = {
+                   diagnostics = {
+                       globals = { "vim" }
+                   }
+               }
+           }
+       }
+    end,
+}
+
+require("mason").setup(settings)
+
+require("mason-lspconfig").setup({
+    ensure_installed = servers,
+    automatic_installation = true,
+    handlers = handlers
 })
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require("lspconfig").lua_ls.setup {
-  capabilities = capabilities,
-}
-
-require("lspconfig").pyright.setup {
-  capabilities = capabilities,
-}
-
-require("lspconfig").clangd.setup {
-  capabilities = capabilities,
-}
-
-require("lspconfig").bashls.setup {
-  capabilities = capabilities,
-}
-
-require("lspconfig").rust_analyzer.setup {
-  capabilities = capabilities,
-}
 
