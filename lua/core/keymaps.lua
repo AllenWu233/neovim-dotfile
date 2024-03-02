@@ -25,6 +25,7 @@ keymap.set("v", "<", "<gv")
 -- 全选操作
 keymap.set("n", "<C-A>", "ggVGy") -- 复制
 keymap.set("n", "<C-X>", "ggdG") -- 删除
+keymap.set("n", "<leader>=", "gg=G") -- 缩进
 
 -- 窗口
 keymap.set("n", "<leader>sh", "<C-w>v") -- 水平新增窗口 
@@ -47,11 +48,6 @@ keymap.set("n", "J", ":bprevious<CR>")
 keymap.set("n", "K", ":bnext<CR>")
 keymap.set("n", "<leader>x", ":bdelete!<CR>")
 
-
-keymap.set("n", "<leader>ca", ":ColorizerAttachToBuffer<CR>")
-keymap.set("n", "<leader>cd", ":ColorizerDetachFromBuffer<CR>")
-keymap.set("n", "<leader>cr", ":ColorizerReloadAllBuffers<CR>")
-
 -- 一键编译运行
 -- keymap.set("n", "<F5>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out < %<.in<CR>")
 -- keymap.set("n", "<F6>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out<CR>")
@@ -60,3 +56,8 @@ keymap.set("n", "<leader>cr", ":ColorizerReloadAllBuffers<CR>")
 -- ---------- 插件 ---------- ---
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+-- Colorizer
+keymap.set("n", "<leader>ca", ":ColorizerAttachToBuffer<CR>")
+keymap.set("n", "<leader>cd", ":ColorizerDetachFromBuffer<CR>")
+keymap.set("n", "<leader>cr", ":ColorizerReloadAllBuffers<CR>")
