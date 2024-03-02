@@ -18,7 +18,7 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",  -- 文档树
     "nvim-tree/nvim-web-devicons", -- 文档树图标
 
-    "christoomey/vim-tmux-navigator", -- 用ctl-hjkl来定位窗口
+    "christoomey/vim-tmux-navigator", -- 用<leader>hjkl来定位窗口
     "nvim-treesitter/nvim-treesitter", -- 语法高亮
     "p00f/nvim-ts-rainbow", -- 配合treesitter，不同括号颜色区分
 
@@ -50,14 +50,14 @@ local plugins = {
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     {
-        'goolord/alpha-nvim',
+        'goolord/alpha-nvim', -- dashboard
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function ()
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
     },
 
-    'norcalli/nvim-colorizer.lua'
+    'norcalli/nvim-colorizer.lua'  -- color highlight
 }
 
 local opts = {} -- 注意要定义这个变量
