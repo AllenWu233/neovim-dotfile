@@ -72,6 +72,7 @@ local plugins = {
     },
 
     'norcalli/nvim-colorizer.lua', -- color highlight
+    'yamatsum/nvim-cursorline',
 }
 
 local opts = {} -- 注意要定义这个变量
