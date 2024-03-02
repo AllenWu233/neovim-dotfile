@@ -43,7 +43,8 @@ local opt = {
             "toggleterm",
         },
     },
-    scope = { highlight = highlight }
+    scope = {};
+    -- scope = { highlight = highlight }
 }
 
 require("ibl").setup(opt)
