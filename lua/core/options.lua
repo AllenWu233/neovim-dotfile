@@ -44,7 +44,7 @@ opt.smartcase = true
 opt.autoread = true
 
 -- 等待快捷键连击时间
-opt.timeoutlen = 300
+opt.timeoutlen = 400
 
 -- 自动补全不自动选中
 -- opt.completeopt = "menu,menuone,noselect,noinsert"
@@ -74,4 +74,5 @@ opt.pumheight = 10
 ---- 外观 ----
 opt.termguicolors = true
 vim.cmd[[colorscheme tokyonight-moon]]
+-- vim.cmd[[colorscheme tokyonight-night]]
 

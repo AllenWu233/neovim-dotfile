@@ -47,6 +47,11 @@ keymap.set("n", "J", ":bprevious<CR>")
 keymap.set("n", "K", ":bnext<CR>")
 keymap.set("n", "<leader>x", ":bdelete!<CR>")
 
+
+keymap.set("n", "<leader>ca", ":ColorizerAttachToBuffer<CR>")
+keymap.set("n", "<leader>cd", ":ColorizerDetachFromBuffer<CR>")
+keymap.set("n", "<leader>cr", ":ColorizerReloadAllBuffers<CR>")
+
 -- 一键编译运行
 -- keymap.set("n", "<F5>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out < %<.in<CR>")
 -- keymap.set("n", "<F6>", ":w<CR>:!g++ -g -O2 -std=c++11 -Wall -Wextra -Wshadow % -o %<.out && ./%<.out<CR>")

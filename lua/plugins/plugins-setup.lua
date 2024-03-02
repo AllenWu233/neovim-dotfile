@@ -56,6 +56,8 @@ local plugins = {
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
     },
+
+    'norcalli/nvim-colorizer.lua'
 }
 
 local opts = {} -- 注意要定义这个变量
