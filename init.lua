@@ -3,7 +3,7 @@ require("plugins.plugins-setup")
 
 require("core.options")
 require("core.keymaps")
-require("core.autorun")
+require("core.autocmd")
 
 -- 插件
 require("plugins.lualine")
@@ -16,5 +16,5 @@ require("plugins/autopairs")
 require("plugins/bufferline")
 require("plugins/gitsigns")
 require("plugins/telescope")
--- require("plugins/dashboard")
 require("plugins/ibl")
+require("plugins.alpha")
