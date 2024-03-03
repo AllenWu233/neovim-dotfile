@@ -33,7 +33,7 @@ local plugins = {
     'norcalli/nvim-colorizer.lua', -- color highlight
     'yamatsum/nvim-cursorline',
     'h-hg/fcitx.nvim', -- better input method
-    'sefeng211/jk.vim',
+    -- 'sefeng211/jk.vim',
 
     {
         "williamboman/mason.nvim",
