@@ -35,11 +35,11 @@ dashboard.section.header.val = ghost
 
 -- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
-    dashboard.button( "f", "  Find file", ":cd $HOME/Workspace | Telescope find_files<CR>"),
-    dashboard.button( "r", "  Recent files"   , ":Telescope oldfiles<CR>"),
-    dashboard.button( "c", "  Configuration" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR><CR>"),
-    dashboard.button( "q", "󰗼  Quit", ":qa<CR>"),
+    dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
+    dashboard.button( "f", "󰈞  Find file", ":cd $HOME/ | Telescope find_files<CR>"),
+    dashboard.button( "r", "  Recent files"   , ":Telescope oldfiles<CR>"),
+    dashboard.button( "c", "  Configuration" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR><CR>"),
+    dashboard.button( "q", "󰅖  Quit", ":qa<CR>"),
 }
 
 -- Set footer
