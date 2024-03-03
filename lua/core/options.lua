@@ -1,77 +1,64 @@
 local opt = vim.opt
 
 
--- utf8
-opt.encoding = "UTF-8"
-opt.fileencoding = 'utf-8'
+-- encodeing
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+opt.fileencodings = {"utf-8", "ucs-bom", "gb18030", "gbk", "gb2312", "cp936" }
 
--- 行号
+-- line number
 opt.relativenumber = true
 opt.number = true
 
--- 缩进
+-- indent
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.expandtab = true    -- tab 2 space
 opt.autoindent = true
 opt.smartindent = true
 
--- 允许折行
+-- display lines with a line break
 opt.wrap = true
 
--- 光标行
 opt.cursorline = true
 
--- 移动光标时周围保留空白
+-- keep space when moving cursor
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
--- 启用鼠标
 opt.mouse:append("a")
 
--- 系统剪贴板
 opt.clipboard:append("unnamedplus")
 
--- 默认新窗口右和下
+-- new window in right and below
 opt.splitright = true
 opt.splitbelow = true
 
--- 搜索
+-- search
 opt.ignorecase = true
 opt.smartcase = true
 
--- 当文件被外部程序修改时，自动加载
 opt.autoread = true
 
--- 等待快捷键连击时间
+-- time wait for typing shortcut keys
 opt.timeoutlen = 400
 
--- 自动补全不自动选中
--- opt.completeopt = "menu,menuone,noselect,noinsert"
-
--- 显示左侧图标指示列
 opt.signcolumn = "yes"
 
--- 右侧参考线
--- opt.colorcolumn = "80"
-
--- 使用增强状态栏插件后不再需要 vim 的模式提示
 opt.showmode = false
 
--- 不可见字符显示
+-- opt.colorcolumn = "80"
+
+-- show invisible characters
 -- opt.list = true
 -- opt.listchars = "space:·"
 
--- 永远显示 tabline
 opt.showtabline = 2
 
--- 补全增强
 opt.wildmenu = true
-
--- 补全最多显示10行
 opt.pumheight = 10
 
----- 外观 ----
+---- theme ----
 opt.termguicolors = true
 vim.cmd[[colorscheme tokyonight-moon]]
 -- vim.cmd[[colorscheme tokyonight-night]]

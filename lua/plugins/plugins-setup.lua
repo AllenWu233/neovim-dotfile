@@ -13,38 +13,35 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
-    "folke/tokyonight.nvim", -- 主题
-    "nvim-lualine/lualine.nvim",  -- 状态栏
-    "nvim-tree/nvim-tree.lua",  -- 文档树
-    "nvim-tree/nvim-web-devicons", -- 文档树图标
-
-    "christoomey/vim-tmux-navigator", -- 用<leader>hjkl来定位窗口
-    "nvim-treesitter/nvim-treesitter", -- 语法高亮
-    "p00f/nvim-ts-rainbow", -- 配合treesitter，不同括号颜色区分
+    "folke/tokyonight.nvim", -- theme
+    "nvim-lualine/lualine.nvim",  -- status bar
+    "nvim-tree/nvim-tree.lua",  -- document tree
+    "nvim-tree/nvim-web-devicons", -- icons for document tree
+    "christoomey/vim-tmux-navigator", -- navigate window through <leader>hjkl
+    "nvim-treesitter/nvim-treesitter", -- grammar highlight 
+    "p00f/nvim-ts-rainbow", -- with treesitter, rainbow colors for brackets
+    "hrsh7th/nvim-cmp", -- auto completetion
+    "hrsh7th/cmp-nvim-lsp",
+    "L3MON4D3/LuaSnip", -- snippets engine for auto completetion
+    "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
+    "hrsh7th/cmp-path", -- file path
+    "numToStr/Comment.nvim", -- gcc & gc comment
+    "windwp/nvim-autopairs",
+    "akinsho/bufferline.nvim",
+    "lewis6991/gitsigns.nvim",
+    'norcalli/nvim-colorizer.lua', -- color highlight
+    'yamatsum/nvim-cursorline',
 
     {
         "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
+        "williamboman/mason-lspconfig.nvim", -- as a bridge between mason.nvim and lspconfig
         "neovim/nvim-lspconfig"
     },
 
-    -- 自动补全
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip", -- snippets引擎，不装这个自动补全会出问题
-    "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets",
-    "hrsh7th/cmp-path", -- 文件路径
-
-    "numToStr/Comment.nvim", -- gcc和gc注释
-    "windwp/nvim-autopairs", -- 自动补全括号
-
-    "akinsho/bufferline.nvim", -- buffer分割线
-    "lewis6991/gitsigns.nvim", -- 左则git提示
-
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5', -- 文件检索
-        dependencies = { {'nvim-lua/plenary.nvim'} } -- requires要改为dependencies
+        'nvim-telescope/telescope.nvim', tag = '0.1.5', -- file search
+        dependencies = { {'nvim-lua/plenary.nvim'} }
     },
 
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
@@ -52,29 +49,15 @@ local plugins = {
     {
         'goolord/alpha-nvim', -- dashboard
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
-        end
     },
 
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        init = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
     },
 
-    'norcalli/nvim-colorizer.lua', -- color highlight
-    'yamatsum/nvim-cursorline',
 }
 
-local opts = {} -- 注意要定义这个变量
 
+local opts = {}
 require("lazy").setup(plugins, opts)

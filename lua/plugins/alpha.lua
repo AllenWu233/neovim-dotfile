@@ -55,7 +55,7 @@ dashboard.section.buttons.val = {
 --       }
 --   end)
 --   ```
-local fortune = require("alpha.fortune") 
+local fortune = require("alpha.fortune")
 dashboard.section.footer.val = fortune()
 
 -- Send config to alpha
