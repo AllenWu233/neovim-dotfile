@@ -20,12 +20,16 @@ local plugins = {
     "christoomey/vim-tmux-navigator", -- navigate window through <leader>hjkl
     "nvim-treesitter/nvim-treesitter", -- grammar highlight 
     "p00f/nvim-ts-rainbow", -- with treesitter, rainbow colors for brackets
+
     "hrsh7th/nvim-cmp", -- auto completetion
     "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip", -- snippets engine for auto completetion
-    "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets",
+    "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path", -- file path
+    "hrsh7th/cmp-cmdline",
+    "saadparwaiz1/cmp_luasnip",
+
+    "L3MON4D3/LuaSnip", -- snippets engine for auto completetion
+    "rafamadriz/friendly-snippets",
     "numToStr/Comment.nvim", -- gcc & gc comment
     "windwp/nvim-autopairs",
     "akinsho/bufferline.nvim",
@@ -34,6 +38,13 @@ local plugins = {
     'yamatsum/nvim-cursorline',
     'h-hg/fcitx.nvim', -- better input method
     -- 'sefeng211/jk.vim',
+    {
+        "lunarvim/bigfile.nvim",
+        config = function()
+            require("bigfile").setup()
+        end,
+        event = { "FileReadPre", "BufReadPre", "User FileOpened" },
+    },
 
     {
         "williamboman/mason.nvim",
@@ -51,6 +62,10 @@ local plugins = {
     {
         'goolord/alpha-nvim', -- dashboard
         dependencies = { 'nvim-tree/nvim-web-devicons' },
+        -- config = function()
+        --     require("plugins.config.alpha").setup()
+        -- end,
+        event = "VimEnter",
     },
 
     {
@@ -62,4 +77,5 @@ local plugins = {
 
 
 local opts = {}
+-- local opts = { defaults = { lazy = true } }
 require("lazy").setup(plugins, opts)

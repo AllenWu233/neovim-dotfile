@@ -17,20 +17,23 @@ end
 
 
 cmp.setup({
+    -- completion = {
+    --     autocomplete = false,
+    -- },
+
     -- Add borders around the popup window
     window = {
-        documentation = {
-            border = 'rounded',
-            -- scrollbar = '║',
-        },
-        completion = {
-            border = 'rounded',
-            -- scrollbar = '║',
-        },
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+        -- documentation = {
+        --     border = 'rounded',
+        --     -- scrollbar = '║',
+        -- },
+        -- completion = {
+        --     border = 'rounded',
+        --     -- scrollbar = '║',
+        -- },
     },
-    -- window = {
-    --     completion = cmp.config.window.bordered(),
-    -- },
     snippet = {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -40,6 +43,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),  -- 取消补全，esc也可以退出
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
@@ -79,7 +83,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-    }, {
-            { name = 'buffer' },
-        })
+        { name = 'buffer' },
+        -- { name = 'cmdline' },
+    })
 })

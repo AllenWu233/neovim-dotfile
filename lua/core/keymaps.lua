@@ -20,11 +20,18 @@ k.set("v", ">", ">gv")
 k.set("v", "<", "<gv")
 
 
+-- ---------- INSERT mode ---------- --
+k.set("i", "<C-s>", "<ESC>:w<CR>") -- auto indent 
+
+
 -- ---------- NORMAL mode ---------- --
 -- select all
 k.set("n", "<C-A>", "ggVGy") -- copy
 k.set("n", "<C-X>", "ggdG") -- delete
 k.set("n", "<leader>=", "gg=G") -- auto indent 
+
+-- save
+k.set("n", "<C-s>", "<ESC>:w<CR>")
 
 -- window
 k.set("n", "<leader>sh", "<C-w>v") -- add window horizontally

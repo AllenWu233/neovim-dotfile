@@ -37,6 +37,7 @@ dashboard.section.header.val = ghost
 dashboard.section.buttons.val = {
     dashboard.button( "n", "  New file" , ":ene <BAR> startinsert <CR>"),
     dashboard.button( "f", "󰈞  Find file", ":cd . | Telescope find_files<CR>"),
+    -- dashboard.button( "p", "  Projects" , ":Telescope projects<CR>"),
     dashboard.button( "r", "  Recent files"   , ":Telescope oldfiles<CR>"),
     dashboard.button( "c", "  Configuration" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR><CR>"),
     dashboard.button( "q", "󰅖  Quit", ":qa<CR>"),
