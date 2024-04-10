@@ -21,7 +21,10 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter", -- grammar highlight 
     "p00f/nvim-ts-rainbow", -- with treesitter, rainbow colors for brackets
 
-    "hrsh7th/nvim-cmp", -- auto completetion
+    {
+        "hrsh7th/nvim-cmp", -- auto completetion
+    },
+
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path", -- file path
@@ -37,7 +40,7 @@ local plugins = {
     'norcalli/nvim-colorizer.lua', -- color highlight
     'yamatsum/nvim-cursorline',
     'h-hg/fcitx.nvim', -- better input method
-    -- 'sefeng211/jk.vim',
+    'allenwu233/jk.vim',
     {
         "lunarvim/bigfile.nvim",
         config = function()
@@ -73,6 +76,9 @@ local plugins = {
         event = "VeryLazy",
     },
 
+    {
+        'mfussenegger/nvim-jdtls',
+    },
 }
 
 

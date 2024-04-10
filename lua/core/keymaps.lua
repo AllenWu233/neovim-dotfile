@@ -7,9 +7,11 @@ vim.g.mapleader = " "
 
 -- ---------- INSERT mode ---------- --
 k.set("i", "jk", "<ESC>")
+k.set("i", "kj", "<ESC>")
 
 -- ---------- VISUAL mode ---------- --
 k.set("v", "jk", "<ESC>")
+k.set("v", "kj", "<ESC>")
 
 -- move one or more lines
 k.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -19,6 +21,8 @@ k.set("v", "K", ":m '<-2<CR>gv=gv")
 k.set("v", ">", ">gv")
 k.set("v", "<", "<gv")
 
+-- fold
+k.set("v", "<leader>f", "zf")
 
 -- ---------- INSERT mode ---------- --
 k.set("i", "<C-s>", "<ESC>:w<CR>") -- auto indent 
@@ -52,6 +56,9 @@ k.set("n", "<leader>nh", ":nohl<CR>")
 k.set("n", "J", ":bprevious<CR>")
 k.set("n", "K", ":bnext<CR>")
 k.set("n", "X", ":bdelete!<CR>")
+
+-- fold or unfold
+k.set("n", "<leader>a", "za")
 
 -- ---------- plugins ---------- --
 -- nvim-tree

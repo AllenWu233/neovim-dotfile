@@ -1,4 +1,7 @@
 local opt = vim.opt
+local o = vim.o
+local g = vim.g
+local cmd = vim.cmd
 
 
 -- encodeing
@@ -26,7 +29,7 @@ opt.cursorline = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
 
-opt.mouse:append("a")
+-- opt.mouse:append("a")
 
 opt.clipboard:append("unnamedplus")
 
@@ -63,3 +66,11 @@ opt.termguicolors = true
 vim.cmd[[colorscheme tokyonight-moon]]
 -- vim.cmd[[colorscheme tokyonight-night]]
 
+---- other ----
+-- disable automatic comment wrapping and insertion of comment leaders
+cmd('autocmd BufEnter * silent! set formatoptions-=cro')
+cmd('autocmd BufEnter * silent! setlocal formatoptions-=cro')
+
+-- remember fold
+cmd('autocmd BufWinLeave * silent! mkview')
+cmd('autocmd BufWinEnter * silent! loadview')
