@@ -40,7 +40,6 @@ local plugins = {
     'norcalli/nvim-colorizer.lua', -- color highlight
     'yamatsum/nvim-cursorline',
     'h-hg/fcitx.nvim', -- better input method
-    'allenwu233/jk.vim',
     {
         "lunarvim/bigfile.nvim",
         config = function()

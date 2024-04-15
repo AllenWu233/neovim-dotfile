@@ -38,3 +38,16 @@ vim.api.nvim_create_autocmd("FileType", {
         )
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "rust",
+    callback = function()
+        vim.api.nvim_buf_set_keymap(
+            0,
+            "n",
+            "<F5>",
+            "<ESC>:w<CR>:split<CR>:te cargo run %<CR>i",
+            { silent = true, noremap = true }
+        )
+    end,
+})
