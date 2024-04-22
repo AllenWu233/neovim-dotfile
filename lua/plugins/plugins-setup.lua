@@ -23,6 +23,7 @@ local plugins = {
 
     {
         "hrsh7th/nvim-cmp", -- auto completetion
+        event = { "FileReadPre", "BufReadPre", "User FileOpened" },
     },
 
     "hrsh7th/cmp-nvim-lsp",
@@ -39,7 +40,10 @@ local plugins = {
     "lewis6991/gitsigns.nvim",
     'norcalli/nvim-colorizer.lua', -- color highlight
     'yamatsum/nvim-cursorline',
-    'h-hg/fcitx.nvim', -- better input method
+    {
+        'h-hg/fcitx.nvim', -- better input method
+        event = { "FileReadPre", "BufReadPre", "User FileOpened" },
+    },
     {
         "lunarvim/bigfile.nvim",
         config = function()
@@ -77,6 +81,20 @@ local plugins = {
 
     {
         'mfussenegger/nvim-jdtls',
+    },
+
+    {
+        'ahmedkhalf/project.nvim',
+        config = function()
+            require("nvim-tree").setup({
+                sync_root_with_cwd = true,
+                respect_buf_cwd = true,
+                update_focused_file = {
+                    enable = true,
+                    update_root = true
+                },
+            })
+        end
     },
 }
 
